@@ -6,7 +6,10 @@ locals {
 }
 
 module "gke" {
-  source                     = "terraform-google-modules/kubernetes-engine/google"
+  source  = "terraform-google-modules/kubernetes-engine/google"
+  version = "23.3.0"
+
+
   project_id                 = var.google_project
   name                       = "demo-cluster"
   region                     = data.google_compute_zones.available.region
